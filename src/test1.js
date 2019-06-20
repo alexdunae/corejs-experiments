@@ -1,3 +1,5 @@
+// var set = new Set([1, 2, 3]);
+
 const s = new Set(["a", "b"]);
 console.warn("set is", s);
 const el = document.createElement("li");
