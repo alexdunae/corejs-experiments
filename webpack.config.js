@@ -1,17 +1,17 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
   entry: {
-    index: "./src/index.js",
-    test1: "./src/test1.js",
-    test2: "./src/test2.js",
-    test3: "./src/test3.js",
-    test4: "./src/test4.js"
+    index: './src/index.js',
+    test1: './src/test1.js',
+    test2: './src/test2.js',
+    test3: './src/test3.js',
+    test4: './src/test4.js'
   },
-  mode: "production",
+  mode: 'production',
   output: {
-    filename: "[name].js",
-    path: __dirname + "/dist"
+    filename: '[name].js',
+    path: __dirname + '/dist'
   },
   module: {
     rules: [
@@ -19,9 +19,17 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: ["@babel/preset-env"]
+            presets: [
+              [
+                '@babel/preset-env',
+                {
+                  useBuiltIns: 'usage',
+                  corejs: 3
+                }
+              ]
+            ]
           }
         }
       }
